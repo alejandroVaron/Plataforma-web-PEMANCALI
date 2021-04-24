@@ -1,4 +1,5 @@
 import userRoutes from './routes/userRoutes'
+import categoryRoutes from './routes/categoryRoutes'
 import express from 'express'
 import bodyParser from 'body-parser';
 import urlShortener from 'node-url-shortener';
@@ -24,6 +25,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/user', userRoutes);
+app.use('/category', categoryRoutes);
 
 sequelize.sync({ force: false }).then( () => {
     console.log("Nos conectamos a la base de datos")

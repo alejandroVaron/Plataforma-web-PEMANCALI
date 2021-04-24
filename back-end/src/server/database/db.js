@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize')
 const { development } = require('../config/config.json')
 require('dotenv').config();
-var database = 1;   // 0 = Localhost database  ||  1 = Heroku database
+var database = 0;   // 0 = Localhost database  ||  1 = Heroku database
 var sequelize
 
 if(database == 0){
