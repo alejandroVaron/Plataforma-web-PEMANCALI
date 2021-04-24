@@ -1,17 +1,90 @@
-const {Usuarios} = require('../models/Usuarios')
+const Usuarios = require('../server/models/Usuarios')
+
 class UserController{
 
     static async getAllUsers(req, res){
-        try{
-            const users = await Usuarios.find()
-            res.json({
-                message: 'Entré aquí',
-                data: users
-            })
-        }catch(error){
 
+        Usuarios.findAll().then(users => {
+            res.json(users);
+        }).catch(error => {
+            res.json(error)
+        })
+        
+    }
+
+    static async createUser(req, res){
+        const newUser = req.body;
+        Usuarios.create(newUser).then(user => {
+            res.json({
+                message: "The user has been created",
+                data: user
+            })
+        }).catch(error => {
+            res.json({
+                message: "The user has not been created",
+                data: error
+            })
+        })
+    }
+
+    static async updateUser(req, res){
+        const id = req.params.id;
+        const changeUser = req.body;
+        const existUser = await Usuarios.findOne({
+            where: { id_usuario: Number(id) }
+        })
+
+        if(existUser){
+            Usuarios.update(changeUser, {where:{ id_usuario: Number(id)}}).then(user => {
+                res.json({
+                    message: "The user has been changed",
+                    data: changeUser
+                })
+            }).catch(error => {
+                res.json({
+                    message: "The user has not been changed",
+                    data: error
+                })
+            })
+        }else{
+            res.json("The user id does not exist")
         }
     }
+
+    static async deleteUser(req, res){
+        const id = req.params.id;
+        const changeUser = req.body;
+        const existUser = await Usuarios.findOne({
+            where: { id_usuario: Number(id) }
+        })
+
+        if(existUser){
+            Usuarios.destroy({where:{ id_usuario: Number(id)}}).then(user => {
+                res.json("The user has been deleted")
+            }).catch(error => {
+                res.json({
+                    message: "The user id does not exist",
+                    data: error
+                })
+            })
+        }else{
+            res.json("The user id does not exist")
+        }        
+    }
+
+    static async getUserById(req, res){
+        const id = req.params.id;
+        Usuarios.findOne( {where: { id_usuario: Number(id)}} ).then(user => {
+            if(user != null){
+                res.json(user)
+            }else{
+                res.json("User id does not exist")
+            }
+        }).catch(error => {
+            res.json(error)
+        })
+    }
+    
 
 }
 export default UserController
