@@ -1,8 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../database/db');
   class Pedidos extends Model {
     /**
      * Helper method for defining associations.
@@ -14,6 +11,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Pedidos.init({
+    id_pedido: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     id_usuario: DataTypes.INTEGER,
     id_producto: DataTypes.INTEGER,
     cantidad: DataTypes.INTEGER,
@@ -23,5 +26,5 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Pedidos',
   });
-  return Pedidos;
-};
+  Pedidos.removeAttribute('id');
+  module.exports = Pedidos;
