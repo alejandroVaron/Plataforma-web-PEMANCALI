@@ -53,7 +53,6 @@ class UserController{
 
     static async deleteUser(req, res){
         const id = req.params.id;
-        const changeUser = req.body;
         const existUser = await Usuarios.findOne({
             where: { id_usuario: Number(id) }
         })
@@ -63,7 +62,7 @@ class UserController{
                 res.json("The user has been deleted")
             }).catch(error => {
                 res.json({
-                    message: "The user id does not exist",
+                    message: "The user has not been deleted",
                     data: error
                 })
             })
@@ -85,6 +84,5 @@ class UserController{
         })
     }
     
-
 }
 export default UserController

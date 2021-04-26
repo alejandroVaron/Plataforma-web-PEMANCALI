@@ -1,15 +1,16 @@
-import userRoutes from './routes/userRoutes'
-import categoryRoutes from './routes/categoryRoutes'
-import express from 'express'
+import userRoutes from './routes/userRoutes';
+import categoryRoutes from './routes/categoryRoutes';
+import productRoutes from './routes/productRoutes';
+import express from 'express';
 import bodyParser from 'body-parser';
 import urlShortener from 'node-url-shortener';
 const app = express();
-const port =   3000;
+const port =   process.env.PORT || 3000;
 const sequelize = require('./server/database/db')
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.urlencoded({ extended: true }));
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 app.post('/url', function(req, res) {
     const url = req.body.url;
@@ -26,15 +27,16 @@ app.get('/', (req, res) => {
 
 app.use('/user', userRoutes);
 app.use('/category', categoryRoutes);
+app.use('/product', productRoutes);
 
 sequelize.sync({ force: false }).then( () => {
     console.log("Nos conectamos a la base de datos")
-    app.listen(3000, function(){
-        console.log('¡Servidor arriba!')
+    app.listen(port, function(){
+        console.log('¡Servidor arriba!');
     });
 }).catch(error => {
     console.log(error)
-})
+});
     
 
 

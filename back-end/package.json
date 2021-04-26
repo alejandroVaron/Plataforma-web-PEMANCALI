@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --exec babel-node src/index.js",
-    "deploy": "git push heroku master"
+    "deploy": "git push heroku master",
+    "postinstall": "patch-package",
+    "heroku-postbuild": "patch-package"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +29,7 @@
     "@babel/cli": "^7.13.14",
     "@babel/core": "^7.13.15",
     "@babel/node": "^7.13.13",
-    "@babel/preset-env": "^7.13.15"
+    "@babel/preset-env": "^7.13.15",
+    "patch-package": "^6.4.7"
   }
 }

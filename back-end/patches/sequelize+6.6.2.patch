@@ -1,0 +1,24 @@
+diff --git a/node_modules/sequelize/lib/sequelize.js b/node_modules/sequelize/lib/sequelize.js
+index b074bee..7f656eb 100644
+--- a/node_modules/sequelize/lib/sequelize.js
++++ b/node_modules/sequelize/lib/sequelize.js
+@@ -20,6 +20,7 @@ const Association = require('./associations/index');
+ const Validator = require('./utils/validator-extras').validator;
+ const Op = require('./operators');
+ const deprecations = require('./utils/deprecations');
++const { isNull } = require('lodash');
+ 
+ /**
+  * This is the main class, the entry point to sequelize.
+@@ -181,9 +182,9 @@ class Sequelize {
+ 
+       config = {};
+       options = username || {};
+-
+       const urlParts = url.parse(arguments[0], true);          
+-
++      //const urlParts = url.parse(options.use_env_variable, true);
++      //options.dialect = (!isNull(urlParts)) ? urlParts.replace(/:$/, '') : 'postgres';
+       options.dialect = urlParts.protocol.replace(/:$/, '');
+       options.host = urlParts.hostname;
+ 
