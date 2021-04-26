@@ -1,0 +1,35 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node src/index.js",
+    "deploy": "git push heroku master",
+    "postinstall": "patch-package",
+    "heroku-postbuild": "patch-package"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "local": "^0.3.3",
+    "mysql2": "^2.2.5",
+    "node-url-shortener": "^1.1.11",
+    "nodemon": "^2.0.7",
+    "pg": "^8.5.1",
+    "sequelize": "^6.6.2",
+    "sequelize-cli": "^6.2.0",
+    "web": "0.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.15",
+    "@babel/node": "^7.13.13",
+    "@babel/preset-env": "^7.13.15",
+    "patch-package": "^6.4.7"
+  }
+}
