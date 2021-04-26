@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../database/db')
+const sequelize = require('../database/db');
   class Productos extends Model {
     /**
      * Helper method for defining associations.
