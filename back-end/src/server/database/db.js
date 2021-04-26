@@ -1,9 +1,11 @@
 const { Sequelize } = require('sequelize')
 const { development, production } = require('../config/config.js')
 var database = 1;   // 0 = Localhost database  ||  1 = Heroku database
-var sequelize
+var heroku = 0;
+var sequelize;
 if(!process.env.DATABASE_URL){
   require('dotenv').config();
+  heroku = 1;
 }
 
 if(database == 0){
@@ -16,7 +18,8 @@ if(database == 0){
     }
   );
 }else{
-  /*
+
+  if(heroku == 1){ 
     sequelize = new Sequelize(
       process.env.DATABASE, process.env.USER, process.env.PASSWORD, {
           host: process.env.HOST,
@@ -30,15 +33,7 @@ if(database == 0){
           }
       } 
     );
-
-    sequelize.authenticate().then(() => {
-      console.log('Connection has been established successfully.');
-    })
-    .catch(err => {
-      console.error('Unable to connect to the database:', err);
-      
-    });
-    */
+  }else{
     sequelize = new  Sequelize ( process . env . DATABASE_URL ,  { 
       dialect :   'postgres' , 
       protocol : 'postgres' , 
@@ -50,6 +45,7 @@ if(database == 0){
         }  
       } 
     });
+  }
 }
 
 module.exports = sequelize;
