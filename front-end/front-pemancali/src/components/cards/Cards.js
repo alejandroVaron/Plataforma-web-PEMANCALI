@@ -12,7 +12,7 @@ const Cards = () => {
             <div className='container-cards'>
                 <h1>Nuestros Productos</h1>
                 <ul className='cards'>
-                    {
+                   {/*  {
                         loading
                         ?
                         console.log('cargando')
@@ -30,7 +30,7 @@ const Cards = () => {
                         
                         
 
-                    }
+                    } */}
 
                     {/* <li className='cards-item'>
                         <Producto 
