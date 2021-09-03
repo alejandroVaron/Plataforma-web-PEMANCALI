@@ -15,11 +15,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       celular_usuario: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER,
+        unique: true
       },
       email_usuario: {
         type: Sequelize.STRING,
-        primaryKey: true
+        unique: true
       },
       contraseña_usuario: {
         type: Sequelize.STRING

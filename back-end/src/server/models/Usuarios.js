@@ -15,11 +15,14 @@ const sequelize = require('../database/db')
        },
        nombre_usuario: DataTypes.STRING,
        apellido_usuario: DataTypes.STRING,
-       celular_usuario: DataTypes.STRING,
+       celular_usuario: {
+        type:DataTypes.INTEGER,
+        unique: true
+        },
        email_usuario: {
          type:DataTypes.STRING,
-         primaryKey: true
-       },
+         unique: true
+        },
        contraseña_usuario: DataTypes.STRING,
        rol_usuario: DataTypes.INTEGER,
   }, {
