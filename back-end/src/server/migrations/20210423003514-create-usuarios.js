@@ -18,6 +18,10 @@ module.exports = {
         type: Sequelize.STRING
       },
       email_usuario: {
+        type: Sequelize.STRING,
+        primaryKey: true
+      },
+      contraseña_usuario: {
         type: Sequelize.STRING
       },
       rol_usuario: {
