@@ -1,0 +1,20 @@
+.jumbotron{
+    background-image: url('../../fondo2.jpg');
+    height: 80vh;
+    background-size: cover;
+    background-position:center;
+    color:#fff;
+    border-radius: 0px !important;
+
+}
+hr{
+    box-shadow: 1px 1px 1px white;
+}
+.imagen-logo{
+    
+    filter:drop-shadow(1px 1px 0px white);
+}
+
+
+
+
