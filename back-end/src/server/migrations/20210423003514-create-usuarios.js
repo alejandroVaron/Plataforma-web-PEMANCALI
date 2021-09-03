@@ -15,9 +15,14 @@ module.exports = {
         type: Sequelize.STRING
       },
       celular_usuario: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER,
+        unique: true
       },
       email_usuario: {
+        type: Sequelize.STRING,
+        unique: true
+      },
+      contraseña_usuario: {
         type: Sequelize.STRING
       },
       rol_usuario: {

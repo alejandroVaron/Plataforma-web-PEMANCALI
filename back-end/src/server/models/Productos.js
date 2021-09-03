@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../database/db')
+const sequelize = require('../database/db');
   class Productos extends Model {
     /**
      * Helper method for defining associations.
@@ -21,7 +21,13 @@ const sequelize = require('../database/db')
     descripcion_producto: DataTypes.STRING,
     url_img: DataTypes.STRING,
     precio_producto: DataTypes.FLOAT,
-    id_categoria: DataTypes.INTEGER
+    id_categoria: {
+      type: DataTypes.INTEGER,
+      references:{
+        model: 'Categorias',
+        key: 'id_categoria'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Productos',
