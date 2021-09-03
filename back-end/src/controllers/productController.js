@@ -1,6 +1,6 @@
 import UserController from './userController';
 
-const Productos = require('../server/models/Productos');
+const Productos = require('../server/models/Productos')
 
 class ProductController{
 
@@ -87,4 +87,4 @@ class ProductController{
     }
 
 }
-export default ProductController;
+export default ProductController
