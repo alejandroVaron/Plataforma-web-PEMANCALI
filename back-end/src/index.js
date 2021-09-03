@@ -5,6 +5,7 @@ import productRoutes from './routes/productRoutes';
 import express from 'express';
 import bodyParser from 'body-parser';
 import urlShortener from 'node-url-shortener';
+import cors from 'cors'
 const app = express();
 var port =   process.env.PORT || 3000;
 const sequelize = require('./server/database/db');
@@ -14,6 +15,7 @@ if(!process.env.DATABASE_URL){
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors())
 
 app.post('/url', function(req, res) {
     const url = req.body.url;
