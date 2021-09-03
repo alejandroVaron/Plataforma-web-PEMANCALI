@@ -16,7 +16,7 @@ const sequelize = require('../database/db')
        nombre_usuario: DataTypes.STRING,
        apellido_usuario: DataTypes.STRING,
        celular_usuario: {
-        type:DataTypes.INTEGER,
+        type:DataTypes.BIGINT,
         unique: true
         },
        email_usuario: {

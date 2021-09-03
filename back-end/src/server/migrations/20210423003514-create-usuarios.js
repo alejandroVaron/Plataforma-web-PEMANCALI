@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       celular_usuario: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.BIGINT,
         unique: true
       },
       email_usuario: {

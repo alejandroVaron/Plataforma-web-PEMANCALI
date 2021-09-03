@@ -33,7 +33,7 @@ app.use('/category', categoryRoutes);
 app.use('/product', productRoutes);
 app.use('/order', orderRoutes);
 
-sequelize.sync({ force: false }).then( () => {
+sequelize.sync({ force: true, alter: true }).then( () => {
     console.log("¡We connect to the database!");
     app.listen(port, function(){
         console.log('¡Server up in port '+port+'!');
