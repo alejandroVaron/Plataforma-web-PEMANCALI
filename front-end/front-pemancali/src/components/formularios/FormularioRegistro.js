@@ -14,7 +14,7 @@ const FormularioRegistro = () => {
         nombre_usuario:nombre,
         apellido_usuario:apellido,
         celular_usuario:celular,
-        cemail_usuario:correo,
+        email_usuario:correo,
         rol_usuario:2,
         contraseña_usuario:contraseña
     }
@@ -30,12 +30,14 @@ const FormularioRegistro = () => {
                 body: JSON.stringify(body)
             })
             if(response.status==200){
-                alert(response.message)
+                alert('El usuario fue registrado con exito')
                 setNombre('')
                 setApellido('')
                 setCelular('')
                 setCorreo('')
                 setContraseña('')
+                setConfirmarContraseña('')
+                window.location = '/login';
             }
         } catch (error) {
             console.log(error)

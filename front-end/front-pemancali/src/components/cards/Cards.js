@@ -4,20 +4,24 @@ import './Cards.css'
 import {useFetch } from '../useFetch'
 
 const Cards = () => {
-    const productos = useFetch('https://pemancalidb.herokuapp.com/product')
-    const {loading , data }=productos 
+    const productos = useFetch('https://pemancalidb.herokuapp.com/product') 
+    const {loading , data }=productos      
 
     return (
         <>
             <div className='container-cards'>
                 <h1>Nuestros Productos</h1>
                 <ul className='cards'>
-                   {/*  {
+                   {
                         loading
                         ?
-                        console.log('cargando')
-                        :
-                        data.map(e=>(
+                        <div className="spinner-border text-dark" role="status">
+                            <span className="sr-only">Loading...</span>
+                            {console.log('cargando')}
+                        </div>
+                        
+                        :                        
+                        data.slice(0,8).map(e=>(
                             <li className='cards-item' key={e.id_producto}>
                             <Producto 
                             url={e.url_img}                        
@@ -30,7 +34,7 @@ const Cards = () => {
                         
                         
 
-                    } */}
+                    }
 
                     {/* <li className='cards-item'>
                         <Producto 
