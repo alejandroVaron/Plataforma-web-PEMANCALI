@@ -1,14 +1,38 @@
 import React from 'react'
 import Producto from './Producto'
 import './Cards.css'
+import {useFetch } from '../useFetch'
 
 const Cards = () => {
+    const productos = useFetch('https://pemancalidb.herokuapp.com/product')
+    const {loading , data }=productos 
+
     return (
         <>
             <div className='container-cards'>
                 <h1>Nuestros Productos</h1>
                 <ul className='cards'>
-                    <li className='cards-item'>
+                   {/*  {
+                        loading
+                        ?
+                        console.log('cargando')
+                        :
+                        data.map(e=>(
+                            <li className='cards-item' key={e.id_producto}>
+                            <Producto 
+                            url={e.url_img}                        
+                            nombreProducto={e.nombre_producto}
+                            precio={e.precio_producto}
+
+                            />
+                        </li>                        
+                        ))                       
+                        
+                        
+
+                    } */}
+
+                    {/* <li className='cards-item'>
                         <Producto 
                         url='./images/22.jpg'                        
                         nombreProducto='Zapatillas Nike'
@@ -71,7 +95,7 @@ const Cards = () => {
                         precio='50000'
 
                         />
-                    </li>
+                    </li> */}
                 </ul>
             </div>
             
