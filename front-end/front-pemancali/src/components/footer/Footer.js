@@ -23,12 +23,12 @@ const Footer = () => {
                         <ul className='col-12 col-md-3 list-unstyled'>
                             <li className='font-weight-bold text-uppercase mb-2'>Síguenos</li>
                             <li >                                
-                                <a href='/' className='text-reset'>
+                                <a href='https://www.facebook.com/pemancali' target="_blank" className='text-reset'>
                                     Facebook <i className='bi bi-facebook'/>  
                                 </a>  
                             </li>
                             <li>                        
-                                <a href='/' className='text-reset'>
+                                <a href='https://www.instagram.com/pemancali/?hl=es-la' target="_blank" className='text-reset'>
                                     Instagram <i className='bi bi-instagram'/>
                                 </a>
                             </li>
