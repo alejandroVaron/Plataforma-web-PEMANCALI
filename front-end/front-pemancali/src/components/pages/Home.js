@@ -1,8 +1,8 @@
 import React from 'react'
 import Jumbo from '../header/Jumbo'
 
-import Cards from '../cards/Cards'
 import Footer from '../footer/Footer'
+import Cards from '../cards/Cards'
 
 const Home = () => {
     return (

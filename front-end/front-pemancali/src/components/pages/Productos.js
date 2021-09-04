@@ -1,11 +1,19 @@
 import React from 'react'
+import Footer from '../footer/Footer'
+import Cards_destacados from '../cards/Cards_destacados'
 
 const Productos = () => {
     return (
         <div>
-            <h1>Nuestos Productos</h1>
+        <>  
+            <Cards_destacados/>
+            <Footer/>
+                    
+        </>
         </div>
+        
     )
+    
 }
 
 export default Productos

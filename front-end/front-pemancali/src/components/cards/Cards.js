@@ -10,14 +10,14 @@ const Cards = () => {
     return (
         <>
             <div className='container-cards'>
-                <h1>Nuestros Productos</h1>
+                <h1>Productos Destacados</h1>
                 <ul className='cards'>
-                   {/*  {
+                   {  
                         loading
                         ?
                         console.log('cargando')
                         :
-                        data.map(e=>(
+                        data.slice(0,8).map(e=>(
                             <li className='cards-item' key={e.id_producto}>
                             <Producto 
                             url={e.url_img}                        
@@ -29,8 +29,7 @@ const Cards = () => {
                         ))                       
                         
                         
-
-                    } */}
+                    }
 
                     {/* <li className='cards-item'>
                         <Producto 
