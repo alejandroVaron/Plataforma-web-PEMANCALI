@@ -1,15 +1,14 @@
 import React from 'react'
 import Jumbo from '../header/Jumbo'
 
-import Cards from '../cards/Cards'
 import Footer from '../footer/Footer'
-import Cards_ultimos from '../cards/Cards_ultimos'
+import Cards from '../cards/Cards'
 
 const Home = () => {
     return (
         <>
             <Jumbo/>
-            <Cards_ultimos/>
+            <Cards/>
             <Footer/>
             
             

@@ -1,12 +1,12 @@
 import React from 'react'
 import Footer from '../footer/Footer'
-import Cards from '../cards/Cards'
+import Cards_destacados from '../cards/Cards_destacados'
 
 const Productos = () => {
     return (
         <div>
         <>  
-            <Cards/>
+            <Cards_destacados/>
             <Footer/>
                     
         </>
