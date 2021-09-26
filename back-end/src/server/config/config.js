@@ -17,5 +17,6 @@ module.exports = {
         rejectUnauthorized: false, // <<<<<<< YOU NEED THIS TO FIX UNHANDLED REJECTION 
       },
     },
-  }
+  },
+  llave: "supersecretkeyomg"
 }

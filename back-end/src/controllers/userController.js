@@ -83,6 +83,19 @@ class UserController{
             res.json(error)
         })
     }
+
+    static async getUserByEmail(req, res){
+        const email = req.params.email;
+        Usuarios.findOne( {where: { email_usuario: email}} ).then(user => {
+            if(user != null){
+                res.json(user)
+            }else{
+                res.json("User id does not exist")
+            }
+        }).catch(error => {
+            res.json(error)
+        })
+    }
     
 }
 export default UserController

@@ -86,5 +86,18 @@ class ProductController{
         })
     }
 
+    static async getProductByCategory(req, res){
+        const id = req.params.id;
+        Productos.findAll( {where: { id_categoria: Number(id)}} ).then(product => {
+            if(product != null){
+                res.json(product)
+            }else{
+                res.json("product id does not exist")
+            }
+        }).catch(error => {
+            res.json(error)
+        })
+    }
+
 }
 export default ProductController;
