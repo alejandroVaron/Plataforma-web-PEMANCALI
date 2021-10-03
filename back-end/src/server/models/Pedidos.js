@@ -17,8 +17,20 @@ const sequelize = require('../database/db');
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-    id_usuario: DataTypes.INTEGER,
-    id_producto: DataTypes.INTEGER,
+    id_usuario: {
+      type: DataTypes.INTEGER,
+      references:{
+        model: 'Usuarios',
+        key: 'id_usuario'
+      }
+    },
+    id_producto: {
+      type: DataTypes.INTEGER,
+      references:{
+        model: 'Productos',
+        key: 'id_producto'
+      }
+    },
     cantidad: DataTypes.INTEGER,
     valor_total: DataTypes.FLOAT,
     fecha_pedido: DataTypes.DATE
