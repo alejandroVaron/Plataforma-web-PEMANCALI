@@ -71,7 +71,7 @@ const Productos = () => {
                         :
                         <div class="alert alert-dark" role="alert">
                              Por el momento no hay productos para esta categoría
-                        </div>                       
+                        </div>                        
 
                     }
 
