@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import {Link} from 'react-router-dom'
+import { URL_HEROKU } from '../../server components/urls'
 
 const FormularioRegistro = () => {
     //Estados
@@ -24,7 +25,7 @@ const FormularioRegistro = () => {
         if(contraseña===confirmarContraseña){
         try {
             const body =data
-            const response=await fetch("https://pemancalidb.herokuapp.com/user",{
+            const response=await fetch(URL_HEROKU+"api/signUp",{
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)

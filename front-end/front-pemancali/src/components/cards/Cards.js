@@ -2,9 +2,10 @@ import React from 'react'
 import Producto from './Producto'
 import './Cards.css'
 import {useFetch } from '../useFetch'
+import { URL_HEROKU } from '../../server components/urls'
 
 const Cards = () => {
-    const productos = useFetch('https://pemancalidb.herokuapp.com/product') 
+    const productos = useFetch(URL_HEROKU+'product') 
     const {loading , data }=productos      
 
     return (
@@ -27,6 +28,7 @@ const Cards = () => {
                             url={e.url_img}                        
                             nombreProducto={e.nombre_producto}
                             precio={e.precio_producto}
+                            descripcion={e.descripcion_producto}
 
                             />
                         </li>                        
