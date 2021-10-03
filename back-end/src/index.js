@@ -38,8 +38,8 @@ app.post('/api/signUp', authController.signUp)
 
 
 app.use('/user', auth, userRoutes);
-app.use('/category', auth, categoryRoutes);
-app.use('/product', auth, productRoutes);
+app.use('/category', categoryRoutes);
+app.use('/product', productRoutes);
 app.use('/order', auth, orderRoutes);
 
 sequelize.sync({ force: false }).then( () => {
