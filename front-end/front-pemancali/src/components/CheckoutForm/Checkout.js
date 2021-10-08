@@ -47,7 +47,7 @@ function getStepContent(step) {
 const theme = createTheme();
 
 export default function Checkout() {
-  const [activeStep, setActiveStep] = React.useState(0);
+  const [activeStep, setActiveStep] = React.useState(3);
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -66,11 +66,6 @@ export default function Checkout() {
             Checkout
           </Typography>
           <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
-            {steps.map((label) => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
           </Stepper>
           <React.Fragment>
             {activeStep === steps.length ? (

@@ -2,6 +2,7 @@ import React from 'react'
 import NumberFormat from 'react-number-format'
 import { actionsTypes } from '../../reducer'
 import {useStateValue } from '../../StateProvider'
+import Swal from 'sweetalert2'
 
 
 
@@ -24,7 +25,11 @@ const Producto = ({codigo,url,nombreProducto,precio}) => {
     }
 
     const generateAlert = () => {
-        alert("Su producto ha sido añadido correctamente ");
+        Swal.fire({
+            icon: 'success',
+            title: 'El producto ha sido añadido correctamente',
+            text: 'Continua con tu compra'                        
+          })
     }
 
 

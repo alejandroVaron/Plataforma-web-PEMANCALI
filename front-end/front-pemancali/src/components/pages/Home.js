@@ -6,13 +6,14 @@ import Footer from '../footer/Footer'
 
 const Home = () => {
     return (
-        <>
+        
+        <div>
             <Jumbo/>
             <Cards/>
             <Footer/>
             
             
-        </>
+        </div>
     )
 }
 

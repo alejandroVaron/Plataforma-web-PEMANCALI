@@ -5,7 +5,7 @@ import Footer from '../footer/Footer'
 const Nosotros = () => {
     return (
         <>
-        <div className='container'>
+        <div className='container nosotros main'>
             <h1 >Sobre Nosotros</h1>   
             <div className='container row justify-content-center'>
                 

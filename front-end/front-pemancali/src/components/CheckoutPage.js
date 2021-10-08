@@ -33,7 +33,7 @@ function FormRow() {
 
 
 return (
-    <div className="container">
+    <div className="container main">
         <div class="row">
             <div class="col">
                 <Typography align="center" gutterBottom variant="h4">

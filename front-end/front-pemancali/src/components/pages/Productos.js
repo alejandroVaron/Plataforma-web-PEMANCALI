@@ -25,7 +25,7 @@ const Productos = () => {
 
     return (
         <>
-        <div className='productosPage'>
+        <div className='productosPage main'>
             <h1>Nuestos Productos</h1>
 
             <div className="input-group px-5 ">

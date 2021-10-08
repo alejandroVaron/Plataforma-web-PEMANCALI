@@ -1,7 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Navbar from './components/header/Navbar'
-
 import Home from './components/pages/Home'
 import Productos from './components/pages/Productos'
 import Nosotros from './components/pages/Nosotros'
@@ -15,7 +14,7 @@ import EditarProducto from './components/pages/EditarProducto';
 
 import CheckoutPage from './components/CheckoutPage';
 import Checkout from './components/CheckoutForm/Checkout';
-import Review from './components/CheckoutForm/Review';
+import Review from './components/CheckoutForm/Checkout';
 
 function App() {
   return (

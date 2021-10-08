@@ -16,8 +16,8 @@ const removeItem = () => dispatch({
 
 
     return (
-        <>
-        <div className="card" style={{width:'15rem', height:'17rem'}}>
+        <div className="main">
+        <div className="card " style={{width:'15rem', height:'17rem'}}>
             <img src={url} className="card-img" alt="producto"/>            
             <div className="card-body">
                 <h5 className="card-title">{nombreProducto}</h5>
@@ -31,7 +31,7 @@ const removeItem = () => dispatch({
             </div>
         </div>
             
-        </>
+        </div>
     )
 }
 

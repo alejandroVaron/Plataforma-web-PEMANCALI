@@ -2,14 +2,26 @@
   text-align: center;
 }
 
-.productosPage,.cliente,.admin,
-.crear-producto, .editar-producto{
-  min-height: 60vh;
+.productosPage,
+.cliente,
+.admin,
+.crear-producto,
+.noso + tros,
+.editar-producto {
+  min-height: 75vh;
   margin-bottom: 20px;
 }
 
-.img-product{
+.img-product {
   width: 50px;
   height: 50px;
   object-fit: cover;
+}
+
+.main {
+  margin-top: 30px;
+}
+
+.checkoutMarginTop {
+  margin-top: 500px;
 }

@@ -4,11 +4,11 @@ import Footer from '../footer/Footer'
 
 const Login = () => {
     return (
-        <>
+        <div className="main">
         <FormularioLogin/>
         <Footer/>
             
-        </>
+        </div>
     )
 }
 

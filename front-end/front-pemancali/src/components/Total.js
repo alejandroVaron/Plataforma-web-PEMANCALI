@@ -12,6 +12,14 @@ import Swal from 'sweetalert2';
 const Total = () => {
     const cookies = new Cookies();
     const [{basket}, dispatch] = useStateValue();
+        array.length = 0;
+        }
+
+
+
+
+
+
 
     async function comprar (){
         if(!cookies.get('id')){
@@ -48,10 +56,12 @@ const Total = () => {
             }
           
 
-
+            {emptyBasket(basket)};
             }catch(error){
                 console.log(error)
             }
+
+        
 
         }
         
@@ -66,9 +76,9 @@ const Total = () => {
             <p className="card-text">
                     <NumberFormat value={getBasketTotal(basket)} displayType={'text'} thousandSeparator={true} prefix={'$'} />                       
             </p>
-        
-            <button type="button" class="btn btn-secondary" onClick={comprar} >Comprar</button>
-            
+            <Link  to='/review' >
+            <button type="button" class="btn btn-secondary"  onClick={comprar}> Comprar</button>
+            </Link>
         </div>
     )
 }
