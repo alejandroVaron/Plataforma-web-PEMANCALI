@@ -11,6 +11,9 @@ import { Link } from 'react-router-dom'
 
 const Admin = () => {
     const cookies = new Cookies();
+    if(cookies.get('rol')==2){
+        window.location='/'
+    }
 
     const productos = useFetch(URL_HEROKU+'product') 
     const {loading , data }=productos 

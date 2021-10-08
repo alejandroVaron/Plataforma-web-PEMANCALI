@@ -28,7 +28,7 @@ h1{
     height: 50%;
     max-width: 100%;
     vertical-align: middle;
-    object-fit: cover;
+    object-fit:contain;
 }
 
 .card-title{

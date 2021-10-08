@@ -10,6 +10,10 @@ import Swal from 'sweetalert2'
 const EditarProducto= () => {
     const cookies = new Cookies();    
 
+    if(cookies.get('rol')==2){
+        window.location='/'
+    }
+
     const [nombreProducto,setNombreProducto]=useState(cookies.get('producto').nombre_producto)
     const [descripcion,setDescripcion]=useState(cookies.get('producto').descripcion_producto)
     const [url,setUrl]=useState(cookies.get('producto').url_img)
@@ -42,7 +46,7 @@ const EditarProducto= () => {
                 if(response.status==200){
                     Swal.fire({
                         icon: 'success',                        
-                        text: 'Elproducto fue creditado con exito',
+                        text: 'Elproducto fue editado con exito',
                         confirmButtonText:'Ok'                        
                       }).then((result) => {
                         if (result.isConfirmed) {

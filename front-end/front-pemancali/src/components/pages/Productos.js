@@ -62,6 +62,7 @@ const Productos = () => {
                          dataProductos.map(e=>(  
                            <li className='cards-item' key={e.id_producto}>
                             <Producto 
+                            codigo={e.id_producto}
                             url={e.url_img}                        
                             nombreProducto={e.nombre_producto}
                             precio={e.precio_producto}
