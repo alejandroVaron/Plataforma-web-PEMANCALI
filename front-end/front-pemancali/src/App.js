@@ -1,6 +1,5 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-
 import Navbar from './components/header/Navbar'
 
 import Home from './components/pages/Home'
@@ -9,6 +8,8 @@ import Nosotros from './components/pages/Nosotros'
 import Login from './components/pages/Login'
 import Registro from './components/pages/Registro'
 import Contacto from './components/pages/Contacto'
+import CheckoutPage from './components/CheckoutPage';
+import Checkout from './components/CheckoutForm/Checkout';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
     <Navbar/>
       <Switch>
       <Route path="/" exact component={Home} />
+      <Route path="/checkout-page"> <CheckoutPage/> </Route>
+      <Route path="/checkout"> <Checkout/> </Route>
       <Route path="/productos"  component={Productos} />
       <Route path='/nosotros' component={Nosotros}/>
       <Route path='/login' component={Login} />
@@ -28,7 +31,7 @@ function App() {
 
       </Switch>
     </Router>
-      
+    {/*<CheckoutPage/>*/}       
       
     </div>
   );
