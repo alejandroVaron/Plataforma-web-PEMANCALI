@@ -28,7 +28,7 @@ const Cliente = () => {
                 nombre_usuario:nombre,
                 apellido_usuario:apellido,
                 celular_usuario:celular,
-                email_usuario:correo,
+                email_usuario:correo
             }
             try {
                 const body =data

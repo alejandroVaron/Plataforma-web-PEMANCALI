@@ -5,6 +5,8 @@ import Cookies from 'universal-cookie/es6'
 import { useFetch } from '../useFetch'
 import { URL_HEROKU } from '../../server components/urls'
 import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom'
+
 
 
 const Admin = () => {
@@ -67,6 +69,13 @@ const Admin = () => {
         
     }
 
+    function editar(e){
+        cookies.set('producto',e,{ path: '/' })
+        window.location='/editar'
+    }
+
+    
+
 
     return (
         <>
@@ -102,8 +111,11 @@ const Admin = () => {
                                     <td><img src={e.url_img} className='img-product'/></td>
                                     <td>{e.nombre_producto}</td> 
                                     <td>
-                                        <button className='btn btn-warning mr-3'>
-                                            <i className='bi bi-pencil' style={{fontSize:'12px'}}/>
+                                        {/* <Link className='btn btn-warning mr-3' to={'/editar/'+e.id_producto}>
+                                            <i className='bi bi-pencil' style={{fontSize:'12px'}} />
+                                        </Link> */}
+                                        <button className='btn btn-warning mr-3' onClick={fn=>{editar(e)}}>
+                                            <i className='bi bi-pencil' style={{fontSize:'12px'}} />
                                         </button>
 
                                         <button className='btn btn-danger' onClick={fn=>{confirmar(e.id_producto,e.nombre_producto)}}>

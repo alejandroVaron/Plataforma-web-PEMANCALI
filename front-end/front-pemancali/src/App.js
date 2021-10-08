@@ -12,6 +12,7 @@ import Contacto from './components/pages/Contacto'
 import Cliente from './components/pages/Cliente'
 import Admin from './components/pages/Admin';
 import CrearProducto from './components/pages/CrearProducto';
+import EditarProducto from './components/pages/EditarProducto';
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
       <Route path='/cliente' component={Cliente}/>
       <Route path='/admin' component={Admin}/>
       <Route path='/crear' component={CrearProducto}/>
-
+      <Route path='/editar' component={EditarProducto}/>
 
       </Switch>
     </Router>

@@ -3,8 +3,9 @@
 }
 
 .productosPage,.cliente,.admin,
-.crear-producto{
-  min-height: 80vh;
+.crear-producto, .editar-producto{
+  min-height: 60vh;
+  margin-bottom: 20px;
 }
 
 .img-product{

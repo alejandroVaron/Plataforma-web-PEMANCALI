@@ -7,6 +7,10 @@ import Cookies from 'universal-cookie/es6'
 
 const CrearProducto = () => {
     const cookies = new Cookies();
+
+    if(cookies.get('rol')==2){
+        window.location='/'
+    }
     const [nombreProducto,setNombreProducto]=useState('')
     const [descripcion,setDescripcion]=useState('')
     const [url,setUrl]=useState('')
