@@ -1,8 +1,45 @@
 import React from 'react'
 
 import {Link} from 'react-router-dom'
+import Cookies from 'universal-cookie/es6'
 
 const Navbar = () => {
+    const cookies = new Cookies();
+    var inicio_sesion=''
+    var correo_user=''
+    if(cookies.get('correo')){
+        inicio_sesion='Cerrar Sesión'
+        correo_user=cookies.get('correo')
+    }else{
+        inicio_sesion='Iniciar Sesión'
+        correo_user=''
+    }
+
+    function btnSesion(){
+        if(inicio_sesion==='Cerrar Sesión'){
+            cookies.remove('id',{ path: '/' })
+            cookies.remove('nombre',{ path: '/' })
+            cookies.remove('apellido',{ path: '/' })
+            cookies.remove('correo',{ path: '/' })
+            cookies.remove('celular',{ path: '/' })
+            window.location = '/login';
+        }else{
+            window.location = '/login';
+        }
+    }
+    function btnUser(){
+        if(correo_user===''){           
+            window.location = '/registro';
+        }else{
+            if(cookies.get('rol')==0){
+                window.location = '/admin';
+            }
+            if(cookies.get('rol')==2){
+            window.location = '/cliente';
+            }
+        }
+    }
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark  " style={{backgroundColor:'black'}}>
@@ -36,9 +73,14 @@ const Navbar = () => {
                                 </Link>                                
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link " to='/login' style={{textDecoration:'underline'}}  >
-                                    Iniciar sesión
-                                </Link>
+                                <a href='#' className="nav-link " style={{textDecoration:'underline'}} onClick={btnUser} >
+                                    {correo_user}
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a href='#' className="nav-link " style={{textDecoration:'underline'}} onClick={btnSesion} >
+                                    {inicio_sesion}
+                                </a>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link " to='/' >

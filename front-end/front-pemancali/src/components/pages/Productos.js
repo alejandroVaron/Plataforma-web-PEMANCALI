@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { useFetch } from '../useFetch'
 import { URL_HEROKU } from '../../server components/urls'
 import Producto from '../cards/Producto'
+import Footer from '../footer/Footer'
 
 const Productos = () => {
     const [categoria,setCategoria]=useState('')
@@ -24,6 +25,7 @@ const Productos = () => {
 
     return (
         <>
+        <div className='productosPage'>
             <h1>Nuestos Productos</h1>
 
             <div className="input-group px-5 ">
@@ -69,7 +71,7 @@ const Productos = () => {
                         </li>
                         )) 
                         :
-                        <div class="alert alert-dark" role="alert">
+                        <div className="alert alert-dark" role="alert">
                              Por el momento no hay productos para esta categoría
                         </div>                        
 
@@ -77,8 +79,12 @@ const Productos = () => {
 
                 </ul>
              </div>
+             
 
 
+             </div>
+
+             <Footer/>
 
 
             

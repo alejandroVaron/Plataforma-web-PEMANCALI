@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 import Cookies from 'universal-cookie'
 import { URL_HEROKU } from '../../server components/urls'
-
+import Swal from 'sweetalert2'
 
 
 const FormularioLogin = () => {
@@ -11,7 +11,7 @@ const FormularioLogin = () => {
     const [contraseña,setContraseña]=useState('')
 
     const data={       
-        correo_usuario:correo,       
+        email_usuario:correo,       
         contraseña_usuario:contraseña
     }
 
@@ -26,18 +26,35 @@ const FormularioLogin = () => {
                 body: JSON.stringify(body)
                 
                   }).then(resp => resp.json()).then(data => {   
-                    console.log(data.data)
-                    let respuesta=data.data
+                    console.log(data.user)
+                    let usuario = data.user
+                    let token =data.token
                     setCorreo('')
                     setContraseña('')                    
 
                     //cookies
-                   /*  cookies.set('id',respuesta[0],{ path: '/' })
-                    cookies.set('nombre',respuesta[1],{ path: '/' })
-                    cookies.set('apellido',respuesta[2],{ path: '/' })
-                    cookies.set('correo',respuesta[3],{ path: '/' })
-                    window.location = '/user'; */
+                    cookies.set('id',usuario.id_usuario,{ path: '/' })
+                    cookies.set('nombre',usuario.nombre_usuario,{ path: '/' })
+                    cookies.set('apellido',usuario.apellido_usuario,{ path: '/' })
+                    cookies.set('correo',usuario.email_usuario,{ path: '/' })
+                    cookies.set('celular',usuario.celular_usuario,{ path: '/' })
+                    cookies.set('rol',usuario.rol_usuario,{ path: '/' })
+                    cookies.set('token',token,{path:'/'})
+                    
+                    if(usuario.rol_usuario==2){
+                    window.location = '/cliente'
+                    }
+                    if(usuario.rol_usuario==0){
+                        window.location='/admin'
+                    } 
                 
+                }).catch(e=>{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Usuario o contraseña incorrectos'                        
+                      })
+                   
                 })            
 
     }
